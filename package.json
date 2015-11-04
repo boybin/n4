@@ -1,0 +1,23 @@
+{
+  "name": "n4",
+  "version": "0.0.1",
+  "description": "简易酒店管理系统",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xb",
+  "window": {
+    "title":"酒店管理系统",
+    "toolbar": false,
+    "width": 800,
+    "height": 500,
+    "resizable": true,
+    "frame":true
+  },
+  "license": "ISC",
+  "dependencies": {
+     "mongodb": "~2.0.33",
+     "monk": "~1.0.1"
+  }
+}
