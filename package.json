@@ -22,6 +22,8 @@
      "monk": "~1.0.1",
      "bootstrap": "~3.3.5",
      "angular": "~1.4.7",
-     "offline-js": "~0.7.13"
+     "offline-js": "~0.7.13",
+     "atos-theme": "~1.1.1",
+     "m8tro-bootstrap": "~3.3.5"
   }
 }
