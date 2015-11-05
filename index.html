@@ -76,35 +76,84 @@
 
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <!-- <div class="row"> -->
+      <!--系统客房状态显示栏-->
       <div class="panel panel-default">
         <div class="panel-body">
-          <span>可租用房间:
-            <span class="label label-info">70</span>
-          </span>
-          <span>已入住房间:
-            <span class="label label-info">50</span>
-          </span>
-          <span>待收拾房间:
-            <span class="label label-info">80</span>
-          </span>
-          <span>待维修房间:
-            <span class="label label-info">70</span>
-          </span>
+          <ul class="list-inline">
+            <li>
+              <h3>可租用房间:
+                <span class="label label-info">70</span>
+              </h3>
+            </li>
+            <li>
+              <h3>已入住房间:
+                <span class="label label-info">50</span>
+              </h3>
+            </li>
+            <li>
+              <h3>待收拾房间:
+                <span class="label label-info">80</span>
+              </h3>
+            </li>
+            <li>
+              <h3>待维修房间:
+                <span class="label label-info">70</span>
+              </h3>
+            </li>
+          </ul>
         </div>
       </div>
-      <!-- </div> -->
+      <!-- 搜索客房栏目 -->
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">全部楼层
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="#">一层</a></li>
-              <li><a href="#">二层</a></li>
-              <li><a href="#">三层</a></li>
-            </ul>
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="btn-group">
+                <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  所有楼层
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">一层</a></li>
+                  <li><a href="#">二层</a></li>
+                  <li><a href="#">三层</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="btn-group">
+                <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  所有房类型
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">标准间</a></li>
+                  <li><a href="#">单人间</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="btn-group">
+                <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  所有状态种类房屋
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">可入住</a></li>
+                  <li><a href="#">已入住</a></li>
+                  <li><a href="#">待收拾</a></li>
+                  <li><a href="#">待维修</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="房间号" aria-describedby="sizing-addon1">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">搜索</button>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
