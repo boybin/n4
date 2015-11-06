@@ -10,7 +10,7 @@
   "window": {
     "title":"酒店管理系统",
     "toolbar": false,
-    "width": 1000,
+    "width": 1200,
     "height": 800,
     "resizable": true,
     "frame": true,
@@ -25,6 +25,8 @@
      "offline-js": "~0.7.13",
      "atos-theme": "~1.1.1",
      "jquery": "~1.11.3",
-     "m8tro-bootstrap": "~3.3.5"
+     "m8tro-bootstrap": "~3.3.5",
+     "blueimp-bootstrap-image-gallery": "3.1.3",
+     "blueimp-gallery": "2.16.0"
   }
 }

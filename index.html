@@ -5,13 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>酒店客房管理平台</title>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css">
+  <link rel="stylesheet" href="node_modules/blueimp-gallery/css/blueimp-gallery.min.css">
 </head>
 
 <body>
   <div class="container">
 
-    <!-- Static navbar -->
+    <!-- 导航栏目 -->
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -74,7 +76,7 @@
       <!--/.container-fluid -->
     </nav>
 
-    <!-- Main component for a primary marketing message or call to action -->
+    <!-- 搜索和状态显示栏目 -->
     <div class="jumbotron">
       <!--系统客房状态显示栏-->
       <div class="panel panel-default">
@@ -104,6 +106,7 @@
         </div>
       </div>
       <!-- 搜索客房栏目 -->
+
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="row">
@@ -157,11 +160,61 @@
           </div>
         </div>
       </div>
+      <div id="links">
+      </div>
     </div>
-
   </div>
+  <!-- 房间状态显示栏目 -->
+  <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+  <div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="true">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body next"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default">
+              <i class="glyphicon glyphicon-log-in"></i> 入住
+            </button>
+            <button type="button" class="btn btn-default">
+              <i class="glyphicon glyphicon-retweet"></i> 换房
+            </button>
+            <button type="button" class="btn btn-default">
+              <i class="glyphicon glyphicon-share"></i> 结算
+            </button>
+            <!--
+            <button type="button" class="btn btn-default pull-left prev">
+              <i class="glyphicon glyphicon-chevron-left"></i> Previous
+            </button>
+            <button type="button" class="btn btn-primary next">
+              Next
+              <i class="glyphicon glyphicon-chevron-right"></i>
+            </button>
+          -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Load script into the app -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/blueimp-gallery/js/jquery.blueimp-gallery.min.js"></script>
+  <script src="node_modules/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js"></script>
+  <script src="js/demo.js"></script>
   <script src="js/app.js"></script>
 </body>
 
