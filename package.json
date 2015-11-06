@@ -9,7 +9,7 @@
   "author": "xb",
   "window": {
     "title":"酒店管理系统",
-    "toolbar": false,
+    "toolbar": true,
     "width": 1200,
     "height": 800,
     "resizable": true,

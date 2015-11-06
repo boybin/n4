@@ -16,6 +16,7 @@ $(function () {
     'use strict';
 
     // Load demo images from flickr:
+    /*
     $.ajax({
         // Flickr API is SSL only:
         // https://code.flickr.net/2014/04/30/flickr-api-going-ssl-only-on-june-27th-2014/
@@ -38,10 +39,12 @@ $(function () {
                 .append($('<img>').prop('src', baseUrl + '_s.jpg'))
                 .prop('href', baseUrl + '_b.jpg')
                 .prop('title', photo.title)
+                .attr('data-title2', 'atry')
                 .attr('data-gallery', '')
                 .appendTo(linksContainer);
         });
     });
+    */
 
     $('#borderless-checkbox').on('change', function () {
         var borderless = $(this).is(':checked');
@@ -100,3 +103,12 @@ $(function () {
     });
 
 });
+$('#blueimp-gallery')
+  .on('slide', function(event, index, slide) {
+    // console.log(slide);
+    // console.log(event);
+    // console.log(text);
+    // console.log($('#links a').eq(index).data('title2'));
+    //$(slide).find('.modal-title2').text("yeee");
+    $(slide).find('.modal-title2').text($('#links a').eq(index).data('title2'));
+  });
