@@ -30,6 +30,7 @@
      "blueimp-gallery": "2.16.0",
      "underscore": "1.8.3",
      "normalize.css": "3.0.3",
-     "angular-storage": "0.0.13"
+     "angular-storage": "0.0.13",
+     "angular-route": "1.4.7"
   }
 }
