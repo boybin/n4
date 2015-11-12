@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="Hotel">
 
 <head>
   <meta charset="utf-8">
@@ -11,9 +11,8 @@
   <link rel="stylesheet" href="node_modules/blueimp-gallery/css/blueimp-gallery.min.css">
 </head>
 
-<body>
+<body ng-controller="MainCtrl as main">
   <div class="container">
-
     <!-- 导航栏目 -->
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -61,7 +60,7 @@
 
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">郭建民 <span class="sr-only"></span></a></li>
+            <li class="active"><a href="#"><span ng-bind="main.currentUser"></span> <span class="sr-only"></span></a></li>
             <li>
               <a href="#">
                 <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> 交班</a>
@@ -76,7 +75,6 @@
       </div>
       <!--/.container-fluid -->
     </nav>
-
     <!-- 搜索和状态显示栏目 -->
     <div class="jumbotron">
       <!--系统客房状态显示栏-->
@@ -85,29 +83,31 @@
           <ul class="list-inline">
             <li>
               <h3>可租用房间:
-                <span class="label label-info">70</span>
+                <span class="label label-info" ng-bind="main.AllRoomsStatus.rentable"></span>
               </h3>
             </li>
             <li>
               <h3>已入住房间:
-                <span class="label label-info">50</span>
+                <span class="label label-info" ng-bind="main.AllRoomsStatus.rented"></span>
               </h3>
             </li>
             <li>
               <h3>待收拾房间:
-                <span class="label label-info">80</span>
+                <span class="label label-info" ng-bind="main.AllRoomsStatus.needclean"></span>
               </h3>
             </li>
             <li>
               <h3>待维修房间:
-                <span class="label label-info">70</span>
+                <span class="label label-info" ng-bind="main.AllRoomsStatus.needFix"></span>
               </h3>
             </li>
           </ul>
         </div>
       </div>
-      <!-- 搜索客房栏目 -->
+    </div>
 
+    <div class="jumbbotron">
+      <!-- 搜索客房栏目 -->
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="row">
@@ -269,6 +269,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
   <!-- 房间状态显示栏目 -->
