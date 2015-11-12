@@ -106,7 +106,7 @@
       </div>
     </div>
 
-    <div class="jumbbotron">
+    <div class="jumbbotron" ng-controller="RoomboardCtrl as roomboard">
       <!-- 搜索客房栏目 -->
       <div class="panel panel-default">
         <div class="panel-body">
@@ -118,9 +118,7 @@
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a href="#">一层</a></li>
-                  <li><a href="#">二层</a></li>
-                  <li><a href="#">三层</a></li>
+                  <li ng-repeat="floor in roomboard.floors"><a hre='#'><span ng-bind="floor.name"><span></a></li>
                 </ul>
               </div>
             </div>
@@ -131,8 +129,7 @@
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a href="#">标准间</a></li>
-                  <li><a href="#">单人间</a></li>
+                  <li ng-repeat="roomtype in roomboard.room_types"><a href="#"><span ng-bind="roomtype.name"></span></a></li>
                 </ul>
               </div>
             </div>
@@ -143,10 +140,7 @@
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a href="#">可入住</a></li>
-                  <li><a href="#">已入住</a></li>
-                  <li><a href="#">待收拾</a></li>
-                  <li><a href="#">待维修</a></li>
+                  <li ng-repeat="roomstatus in roomboard.room_status"><a href="#"><span ng-bind="roomstatus.name"></span></a></li>
                 </ul>
               </div>
             </div>

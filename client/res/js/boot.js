@@ -15,6 +15,9 @@ head.load(
 
   {file:'client/src/hotel/login/Login.js'},
   {file:'client/src/hotel/user/User.js'},
+
   {file:'client/src/hotel/room/Room.js'},
+  {file:'client/src/hotel/room/controllers/RoomController.js'},
+
   {file:'client/src/hotel/hotel.js'}
 );
