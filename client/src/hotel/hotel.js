@@ -8,6 +8,24 @@ var hotelModule = angular.module('Hotel',
         'angular-storage'
     ]);
 
+  hotelModule.config(function($routeProvider){
+    $routeProvider
+    //route for the home page
+    .when('/roomboard',{
+      templateUrl : 'client/src/hotel/room/tmpl/roomsboard.html',
+      controller  : 'RoomboardCtrl',
+      controllerAs: 'roomboard'
+    })
+    .when('/login',{
+      templateUrl : 'client/src/hotel/login/tmpl/login.html',
+      controller  : 'LoginCtrl',
+      controllerAs: 'login'
+    })
+    .otherwise({redirectTo:'/roomboard'});
+  });
+
+
+
   hotelModule.value('FLOORS',[
     {name:'一楼', value:'1'},
     {name:'二楼', value:'2'},

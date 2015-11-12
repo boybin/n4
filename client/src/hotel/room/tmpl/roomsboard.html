@@ -1,0 +1,61 @@
+<!-- 搜索客房栏目 -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="btn-group">
+          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            所有楼层
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li ng-repeat="floor in roomboard.floors"><a hre='#'><span ng-bind="floor.name"><span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="btn-group">
+          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            所有房类型
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li ng-repeat="roomtype in roomboard.room_types"><a href="#"><span ng-bind="roomtype.name"></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="btn-group">
+          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            所有状态种类房屋
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li ng-repeat="roomstatus in roomboard.room_status"><a href="#"><span ng-bind="roomstatus.name"></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" placeholder="房间号" aria-describedby="sizing-addon1">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">搜索</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="links">
+  <div class="row">
+    <div class="col-md-2" ng-repeat="room in roomboard.AllRooms">
+      <a href="{{room.l_img}}" title="{{room.title}}" data-title2="trdsdsd" data-gallery>
+        <img src="{{room.s_img}}" alt="{{room.title}}" title="{{room.title}}"/>
+      </a>
+      <div class="caption">
+        <h4><strong><span ng-bind="room.title"></span></strong></h4>
+      </div>
+    </div>
+
+  </div>
+</div
