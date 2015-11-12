@@ -157,110 +157,15 @@
       </div>
       <div id="links">
         <div class="row">
-          <div class="col-md-2">
-            <a href="client/res/images/single-Bed-green.png" title="Banana" data-title2="trdsdsd" data-gallery>
-              <img src="client/res/images/single-Bed-green.png" alt="Banana" title="Try to ">
+          <div class="col-md-2" ng-repeat="room in roomboard.AllRooms">
+            <a href="{{room.l_img}}" title="{{room.title}}" data-title2="trdsdsd" data-gallery>
+              <img src="{{room.s_img}}" alt="{{room.title}}" title="{{room.title}}"/>
             </a>
             <div class="caption">
-              <h4><strong>Caption above</strong></h4>
+              <h4><strong><span ng-bind="room.title"></span></strong></h4>
             </div>
           </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Three-Beds-green.png" title="Apple" data-title2="dddddd" data-gallery>
-              <img src="client/res/images/Three-Beds-green.png" alt="Apple">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Two-Beds-green.png" title="Orange" data-title2="ddddddffff" data-gallery>
-              <img src="client/res/images/Two-Beds-green.png" alt="Orange">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Three-Beds-green.png" title="Apple" data-title2="dddddd" data-gallery>
-              <img src="client/res/images/Three-Beds-green.png" alt="Apple">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Two-Beds-green.png" title="Orange" data-title2="ddddddffff" data-gallery>
-              <img src="client/res/images/Two-Beds-green.png" alt="Orange">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Three-Beds-green.png" title="Apple" data-title2="dddddd" data-gallery>
-              <img src="client/res/images/Three-Beds-green.png" alt="Apple">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Two-Beds-green.png" title="Orange" data-title2="ddddddffff" data-gallery>
-              <img src="client/res/images/Two-Beds-green.png" alt="Orange">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Three-Beds-red.png" title="Apple" data-title2="dddddd" data-gallery>
-              <img src="client/res/images/Three-Beds-red.png" alt="Apple">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Two-Beds-yellow.png" title="Orange" data-title2="ddddddffff" data-gallery>
-              <img src="client/res/images/Two-Beds-yellow.png" alt="Orange">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Three-Beds-red.png" title="Apple" data-title2="dddddd" data-gallery>
-              <img src="client/res/images/Three-Beds-red.png" alt="Apple">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Two-Beds-yellow.png" title="Orange" data-title2="ddddddffff" data-gallery>
-              <img src="client/res/images/Two-Beds-yellow.png" alt="Orange">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Two-Beds-yellow.png" title="Orange" data-title2="ddddddffff" data-gallery>
-              <img src="client/res/images/Two-Beds-yellow.png" alt="Orange">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <a href="client/res/images/Two-Beds-yellow.png" title="Orange" data-title2="ddddddffff" data-gallery>
-              <img src="client/res/images/Two-Beds-yellow.png" alt="Orange">
-            </a>
-            <div class="caption">
-              <h4><strong>Caption above</strong></h4>
-            </div>
-          </div>
+
         </div>
       </div>
 
