@@ -33,6 +33,7 @@
      "angular-storage": "0.0.13",
      "angular-route": "1.4.7",
      "angular-filter": "0.5.7",
-     "ui-select":"0.13.2"
+     "ui-select": "0.13.2",
+     "angular-sanitize":"1.4.7"
   }
 }
