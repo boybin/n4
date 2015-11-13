@@ -44,17 +44,22 @@ var hotelModule = angular.module('Hotel',
 
 
   hotelModule.value('FLOORS',[
+    {name:'所有楼层', value:''},
     {name:'一楼', value:'1'},
     {name:'二楼', value:'2'},
     {name:'三楼', value:'3'}
   ]);
 
   hotelModule.value('ROOM_TYPES',[
-    {name:'标准间', value:'1'},
-    {name:'单人间', value:'2'}
+    {name:'所有房间类', value:''},
+    {name:'单人间', value:'1'},
+    {name:'双人间', value:'2'},
+    {name:'三人间', value:'3'},
+    {name:'四人间', value:'4'}
   ]);
 
   hotelModule.value('ROOM_STATUS',[
+    {name:'所有状态房间', value:''},
     {name:'可租用', value:'1'},
     {name:'已入住', value:'2'},
     {name:'待收拾', value:'3'},

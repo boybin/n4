@@ -3,56 +3,32 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-lg-3">
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            所有楼层
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li ng-repeat="floor in roomboard.floors">
-              <a hre='#'>
-                <span ng-bind="floor.name">
-                  <span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            所有房类型
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li ng-repeat="roomtype in roomboard.room_types">
-              <a href="#">
-                <span ng-bind="roomtype.name"></span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="btn-group">
-          <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            所有状态种类房屋
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li ng-repeat="roomstatus in roomboard.room_status">
-              <a href="#">
-                <span ng-bind="roomstatus.name"></span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <ui-select ng-model="roomboard.selectedItem">
-          <ui-select-match>
+        <ui-select ng-model="roomboard.selectedFloor">
+          <ui-select-match placeHolder="所有楼层">
             <span ng-bind="$select.selected.name"></span>
           </ui-select-match>
-          <ui-select-choices repeat="item in (roomboard.itemArray | filter: $select.search) track by item.id">
-            <span ng-bind="item.name"></span>
+          <ui-select-choices repeat="floor in (roomboard.floors | filter: $select.search) track by floor.value">
+            <span ng-bind="floor.name"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="col-lg-3">
+        <ui-select ng-model="roomboard.selectedRoomType">
+          <ui-select-match placeHolder="所有类型房间">
+            <span ng-bind="$select.selected.name"></span>
+          </ui-select-match>
+          <ui-select-choices repeat="roomtype in (roomboard.room_types | filter: $select.search) track by roomtype.value">
+            <span ng-bind="roomtype.name"></span>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+      <div class="col-lg-3">
+        <ui-select ng-model="roomboard.selectedRoomStatus">
+          <ui-select-match placeHolder="所有状态房间">
+            <span ng-bind="$select.selected.name"></span>
+          </ui-select-match>
+          <ui-select-choices repeat="status in (roomboard.room_status | filter: $select.search) track by status.value">
+            <span ng-bind="status.name"></span>
           </ui-select-choices>
         </ui-select>
       </div>
@@ -63,19 +39,13 @@
             <button class="btn btn-default" type="button">搜索</button>
           </span>
         </div>
-        <div class="input-group input-group-lg">
-          <input type="text" class="form-control" placeholder="房间号" aria-describedby="sizing-addon1" ng-model="roomNumber2">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">搜索</button>
-          </span>
-        </div>
       </div>
     </div>
   </div>
 </div>
 <div id="links">
   <div class="row">
-    <div class="col-md-2" ng-repeat="room in roomboard.AllRooms|fuzzyBy:'number':roomNumber|fuzzyBy:'number':roomNumber2">
+    <div class="col-md-2" ng-repeat="room in roomboard.AllRooms|fuzzyBy:'number':roomNumber|filterBy:['status']:roomboard.selectedRoomStatus.value|filterBy:['type']:roomboard.selectedRoomType.value|filterBy:['floor']:roomboard.selectedFloor.value">
       <a href="{{room.l_img}}" title="{{room.title}}" data-title2="trdsdsd" data-gallery>
         <img src="{{room.s_img}}" alt="{{room.title}}" title="{{room.title}}" />
       </a>
