@@ -14,10 +14,12 @@ head.load(
   {file:'client/src/hotel/app/models/RoomModel.js'},
 
   {file:'client/src/hotel/login/Login.js'},
+  {file:'client/src/hotel/login/controllers/LoginController.js'},
+
   {file:'client/src/hotel/user/User.js'},
 
   {file:'client/src/hotel/room/Room.js'},
-  {file:'client/src/hotel/room/controllers/RoomController.js'},
+  {file:'client/src/hotel/room/controllers/RoomBoardController.js'},
 
   {file:'client/src/hotel/hotel.js'}
 );

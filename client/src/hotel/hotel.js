@@ -14,12 +14,26 @@ var hotelModule = angular.module('Hotel',
     .when('/roomboard',{
       templateUrl : 'client/src/hotel/room/tmpl/roomsboard.html',
       controller  : 'RoomboardCtrl',
-      controllerAs: 'roomboard'
+      controllerAs: 'roomboard',
+      activeTab   : 'roomboard'
     })
     .when('/login',{
       templateUrl : 'client/src/hotel/login/tmpl/login.html',
       controller  : 'LoginCtrl',
-      controllerAs: 'login'
+      controllerAs: 'login',
+      activeTab   : 'login'
+    })
+    .when('/roommanage',{
+      templateUrl : 'client/src/hotel/room/tmpl/roommanage.html',
+      controller  : 'LoginCtrl',
+      controllerAs: 'roommanage',
+      activeTab   : 'roommanage'
+    })
+    .when('/exchangeroom',{
+      templateUrl : 'client/src/hotel/room/tmpl/roommanage.html',
+      controller  : 'LoginCtrl',
+      controllerAs: 'exchangeroom',
+      activeTab   : 'exchangeroom'
     })
     .otherwise({redirectTo:'/roomboard'});
   });

@@ -17,30 +17,24 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="#">
             <span class="glyphicon glyphicon-home" aria-hidden="true"></span> 酒店客房管理系统</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active">
+            <li ng-class="{active:$route.current.activeTab == 'roomboard'}">
               <a href="#/roomboard">
                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 客房大厅
                 <span class="badge" ng-bind="main.AllRoomsStatus.rentable"></span>
               </a>
             </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <li class="dropdown" ng-class="{active:$route.current.activeTab == 'roommanage'}">
+            <a href="#/roommanage" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <span class="glyphicon glyphicon-check" aria-hidden="true"></span> 客房管理
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-                <li><a href="#">客房管理1</a></li>
+                <li><a href="#/roommanage">客房管理1</a></li>
                 <li><a href="#">客房管理2</a></li>
                 <li><a href="#">客房管理3</a></li>
                 <li role="separator" class="divider"></li>
@@ -49,8 +43,8 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
-            <li>
-              <a href="#">
+            <li ng-class="{active:$route.current.activeTab == 'exchangeroom'}">
+              <a href="#/exchangeroom">
                 <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> 更换房间</a>
             </li>
             <li>
