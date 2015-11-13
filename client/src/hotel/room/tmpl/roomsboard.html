@@ -9,7 +9,12 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li ng-repeat="floor in roomboard.floors"><a hre='#'><span ng-bind="floor.name"><span></a></li>
+            <li ng-repeat="floor in roomboard.floors">
+              <a hre='#'>
+                <span ng-bind="floor.name">
+                  <span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -20,7 +25,11 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li ng-repeat="roomtype in roomboard.room_types"><a href="#"><span ng-bind="roomtype.name"></span></a></li>
+            <li ng-repeat="roomtype in roomboard.room_types">
+              <a href="#">
+                <span ng-bind="roomtype.name"></span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -31,13 +40,31 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li ng-repeat="roomstatus in roomboard.room_status"><a href="#"><span ng-bind="roomstatus.name"></span></a></li>
+            <li ng-repeat="roomstatus in roomboard.room_status">
+              <a href="#">
+                <span ng-bind="roomstatus.name"></span>
+              </a>
+            </li>
           </ul>
         </div>
+        <ui-select ng-model="roomboard.selectedItem">
+          <ui-select-match>
+            <span ng-bind="$select.selected.name"></span>
+          </ui-select-match>
+          <ui-select-choices repeat="item in (roomboard.itemArray | filter: $select.search) track by item.id">
+            <span ng-bind="item.name"></span>
+          </ui-select-choices>
+        </ui-select>
       </div>
       <div class="col-lg-3">
         <div class="input-group input-group-lg">
-          <input type="text" class="form-control" placeholder="房间号" aria-describedby="sizing-addon1">
+          <input type="text" class="form-control" placeholder="房间号" aria-describedby="sizing-addon1" ng-model="roomNumber">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">搜索</button>
+          </span>
+        </div>
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" placeholder="房间号" aria-describedby="sizing-addon1" ng-model="roomNumber2">
           <span class="input-group-btn">
             <button class="btn btn-default" type="button">搜索</button>
           </span>
@@ -48,14 +75,18 @@
 </div>
 <div id="links">
   <div class="row">
-    <div class="col-md-2" ng-repeat="room in roomboard.AllRooms">
+    <div class="col-md-2" ng-repeat="room in roomboard.AllRooms|fuzzyBy:'number':roomNumber|fuzzyBy:'number':roomNumber2">
       <a href="{{room.l_img}}" title="{{room.title}}" data-title2="trdsdsd" data-gallery>
-        <img src="{{room.s_img}}" alt="{{room.title}}" title="{{room.title}}"/>
+        <img src="{{room.s_img}}" alt="{{room.title}}" title="{{room.title}}" />
       </a>
       <div class="caption">
-        <h4><strong><span ng-bind="room.title"></span></strong></h4>
+        <h4>
+          <strong>
+            <span ng-bind="room.title"></span>
+          </strong>
+        </h4>
       </div>
     </div>
 
   </div>
-</div
+  </div

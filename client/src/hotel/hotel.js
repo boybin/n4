@@ -5,7 +5,8 @@ var hotelModule = angular.module('Hotel',
         'Hotel.User',
         'Hotel.Login',
         'Hotel.Room',
-        'angular-storage'
+        'angular-storage',
+        'angular.filter'
     ]);
 
   hotelModule.config(function($routeProvider){
