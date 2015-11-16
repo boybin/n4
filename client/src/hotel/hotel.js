@@ -23,11 +23,9 @@
         activeTab: 'roomboard'
       })
       .when('/login', {
-        // templateUrl: 'client/src/hotel/login/tmpl/login.html',
         templateUrl: 'loginModalContainer',
         controller: 'LoginCtrl',
       //  controllerAs: 'login',
-      //  activeTab: 'login'
       })
       .when('/roommanage', {
         templateUrl: 'client/src/hotel/room/tmpl/roommanage.html',
