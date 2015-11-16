@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="node_modules/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css">
   <link rel="stylesheet" href="node_modules/blueimp-gallery/css/blueimp-gallery.min.css">
   <link rel="stylesheet" href="node_modules/ui-select/dist/select.min.css">
+  <link rel="stylesheet" href="client/res/css/hotel.css">
 </head>
 
 <body ng-controller="MainCtrl as main">
@@ -76,10 +77,10 @@
       <!--/.container-fluid -->
     </nav>
     <!-- 搜索和状态显示栏目 -->
-    <div class="jumbotron">
+    <div class="jumbotron" style="padding:10px;">
       <!--系统客房状态显示栏-->
-      <div class="panel panel-default">
-        <div class="panel-body">
+      <div class="panel panel-default" style="margin-bottom:10px;">
+        <div class="panel-body n4-panel-status-body">
           <ul class="list-inline">
             <li>
               <h3>可租用房间:
@@ -111,6 +112,10 @@
       </div>
     </div>
   </div>
+
+  <script type="text/ng-template" id="loginModalContainer">
+    <div ng-controller="LoginCtrl"></div>
+  </script>
   <!-- 房间状态显示栏目 -->
   <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
   <div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="true">
