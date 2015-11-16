@@ -25,7 +25,7 @@
       .when('/login', {
         templateUrl: 'loginModalContainer',
         controller: 'LoginCtrl',
-      //  controllerAs: 'login',
+        //  controllerAs: 'login',
       })
       .when('/roommanage', {
         templateUrl: 'client/src/hotel/room/tmpl/roommanage.html',
@@ -40,10 +40,27 @@
         activeTab: 'exchangeroom'
       })
       .otherwise({
-        //redirectTo: '/roomboard'
-        redirectTo: '/login'
+        redirectTo: '/roomboard'
+        // redirectTo: '/login'
       });
   });
+
+  hotelModule.run(
+    function($rootScope, $location, $http, store) {
+      $rootScope.globals = store.get('globals') || {};
+      if ($rootScope.globals && $rootScope.globals.currentUser) {
+          $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.token;
+      }
+
+      $rootScope.$on('$locationChangeStart', function(event, next, current) {
+        // redirect to login page if not logged in and trying to access a restricted page
+        var restrictedPage = $.inArray($location.path(), ['/login']) === -1;
+        var loggedIn = $rootScope.globals && $rootScope.globals.currentUser;
+        if (restrictedPage && !loggedIn) {
+          $location.path('/login');
+        }
+      });
+    });
 
   hotelModule.value('FLOORS', [{
     name: '所有楼层',

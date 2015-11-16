@@ -1,41 +1,49 @@
 angular.module('Hotel.Login')
   .controller('LoginCtrl',
-    function($scope, $uibModal, store) {
-
+    function($scope, $rootScope, $uibModal, $location, store) {
       //we can use store to keep login information
-      // store.set("aa","abc");
-      // console.log(store.get("aa"));
-
       var login = this;
-      // login.a = "aaa";
-      var modalInstance = $uibModal.open({
-        templateUrl: "client/src/hotel/login/tmpl/login.html",
-        backdrop: "static",
-        keyboard: true,
-        animation: true,
-        controller: "LoginModalCtrl",
-        controllerAs: "loginModal",
-        resolve: {
-          a: function() {
-            return "aaaa";
+      if (!($rootScope.globals && $rootScope.globals.currentUser)) {
+        var modalInstance = $uibModal.open({
+          templateUrl: "client/src/hotel/login/tmpl/login.html",
+          backdrop: "static",
+          keyboard: true,
+          animation: true,
+          controller: "LoginModalCtrl",
+          controllerAs: "loginModal",
+          resolve: {
+            a: function() {
+              return "aaaa";
+            }
           }
-        }
-      });
+        });
+      } else {
+        $location.path("/roomboard");
+      }
+
       // modalInstance.result.then(function)
-/*      $scope.login = function() {
-        console.log("test");
-        console.log(this.username);
-      }*/
+      /*      $scope.login = function() {
+              console.log("test");
+              console.log(this.username);
+            }*/
     });
 
 angular.module('Hotel.Login')
-  .controller('LoginModalCtrl', function($scope, $uibModalInstance, a) {
+  .controller('LoginModalCtrl', function($scope, $rootScope, $location, $uibModalInstance, store, a) {
     $scope.a = a;
-    // console.log(loginModal.a);
-    // console.log("tttry");
     $scope.login = function() {
-      console.log("submit");
-      console.log($scope.username);
-      console.log($scope.password);
+      if ($scope.username == "aaa" && $scope.password == "aaa") {
+        $rootScope.globals = {
+          currentUser: {
+            username: $scope.username,
+          }
+        };
+        store.set('globals', $rootScope.globals);
+
+        $uibModalInstance.close();
+        $location.path('/roomboard');
+      } else {
+        $scope.error = "用户名密码错误";
+      }
     }
   });
