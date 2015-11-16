@@ -12,6 +12,7 @@ angular.module('Hotel.Common')
 
         main.logout = function(){
             $rootScope.globals = null;
-            $store.set("globals", null);
+            store.set("globals", null);
         };
+
     });

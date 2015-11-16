@@ -31,16 +31,14 @@
               </a>
             </li>
             <li class="dropdown" ng-class="{active:$route.current.activeTab == 'roommanage'}">
-              <a href="#/roommanage" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <span class="glyphicon glyphicon-check" aria-hidden="true"></span> 客房管理
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-                <li><a href="#/roommanage">添加房间</a></li>
-                <li><a href="#">删除房间</a></li>
+                <li><a href="#/addRoom">添加房间</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">设置待收拾房间</a></li>
-                <li><a href="#">设置待维修房间</a></li>
+                <li><a href="#/roommanage">设置房间</a></li>
               </ul>
             </li>
             <li ng-class="{active:$route.current.activeTab == 'exchangeroom'}">

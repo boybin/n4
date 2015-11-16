@@ -29,19 +29,25 @@
       })
       .when('/roommanage', {
         templateUrl: 'client/src/hotel/room/tmpl/roommanage.html',
-        controller: 'LoginCtrl',
+        controller: 'RoomManageCtrl',
         controllerAs: 'roommanage',
         activeTab: 'roommanage'
       })
       .when('/exchangeroom', {
-        templateUrl: 'client/src/hotel/room/tmpl/roommanage.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'exchangeroom',
-        activeTab: 'exchangeroom'
-      })
+          templateUrl: 'client/src/hotel/room/tmpl/roommanage.html',
+          controller: 'ExchangeCtrl',
+          controllerAs: 'exchangeroom',
+          activeTab: 'exchangeroom'
+        })
+      .when('/addRoom', {
+          templateUrl: 'client/src/hotel/room/tmpl/addroom.html',
+          controller: 'AddRoomCtrl',
+          controllerAs: 'addroom',
+          activeTab: 'roommanage'
+        })
       .otherwise({
         redirectTo: '/roomboard'
-        // redirectTo: '/login'
+          // redirectTo: '/login'
       });
   });
 
@@ -49,7 +55,7 @@
     function($rootScope, $location, $http, store) {
       $rootScope.globals = store.get('globals') || {};
       if ($rootScope.globals && $rootScope.globals.currentUser) {
-          $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.token;
+        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.token;
       }
 
       $rootScope.$on('$locationChangeStart', function(event, next, current) {
