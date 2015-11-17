@@ -16,11 +16,13 @@ head.load(
   {file:'client/src/hotel/app/App.js'},
   {file:'client/src/hotel/app/controllers/MainController.js'},
   {file:'client/src/hotel/app/models/RoomModel.js'},
+  {file:'client/src/hotel/app/services/ModalService.js'},
 
   {file:'client/src/hotel/login/Login.js'},
   {file:'client/src/hotel/login/controllers/LoginController.js'},
 
   {file:'client/src/hotel/user/User.js'},
+  {file:'client/src/hotel/user/controllers/TransferController.js'},
 
   {file:'client/src/hotel/room/Room.js'},
   {file:'client/src/hotel/room/controllers/RoomBoardController.js'},

@@ -57,6 +57,11 @@
           controllerAs: 'addroom',
           activeTab: 'roommanage'
         })
+      .when('/transfer', {
+          templateUrl: 'transferModalContainer',
+          controller: 'TransferCtrl',
+          //  controllerAs: 'login',
+      })
       .otherwise({
         redirectTo: '/roomboard'
           // redirectTo: '/login'
