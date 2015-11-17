@@ -46,7 +46,7 @@
 <div id="links">
   <div class="row">
     <div class="col-md-2" ng-repeat="room in roomboard.AllRooms|fuzzyBy:'number':roomNumber|filterBy:['status']:roomboard.selectedRoomStatus.value|filterBy:['type']:roomboard.selectedRoomType.value|filterBy:['floor']:roomboard.selectedFloor.value">
-      <a href="{{room.l_img}}" title="{{room.title}}" data-title2="trdsdsd" data-gallery>
+      <a href="#" title="{{room.title}}" ng-click="roomboard.handleRoom(room)">
         <img src="{{room.s_img}}" alt="{{room.title}}" title="{{room.title}}" />
       </a>
       <div class="caption">

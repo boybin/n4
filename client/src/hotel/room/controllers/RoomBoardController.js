@@ -1,6 +1,6 @@
 angular.module('Hotel.Room')
   .controller('RoomboardCtrl',
-    function(RoomModel, FLOORS, ROOM_TYPES, ROOM_STATUS) {
+    function($uibModal, RoomModel, FLOORS, ROOM_TYPES, ROOM_STATUS) {
       var roomboard = this;
 
       //总共的层数设置
@@ -19,4 +19,29 @@ angular.module('Hotel.Room')
         return true;
       };
 
+      roomboard.handleRoom = function(room) {
+        var tmplLocation = "client/src/hotel/room/tmpl/modal_status_" + room.status + ".html";
+        var roomModal = $uibModal.open({
+          templateUrl: tmplLocation,
+          backdrop: "static",
+          keyboard: false,
+          animation: true,
+          controller: "RoomModalCtrl",
+          controllerAs: "roomModal",
+          resolve: {
+            roomdata: function() {
+              return room;
+            }
+          }
+        });
+      }
+
     });
+
+angular.module('Hotel.Room')
+  .controller('RoomModalCtrl', function($scope, $rootScope, $location, $uibModalInstance, store, roomdata) {
+    $scope.roomdata = roomdata;
+    $scope.close = function() {
+      $uibModalInstance.close();
+    }
+  });

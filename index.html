@@ -7,8 +7,8 @@
   <title>酒店客房管理平台</title>
   <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="node_modules/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css">
-  <link rel="stylesheet" href="node_modules/blueimp-gallery/css/blueimp-gallery.min.css">
+  <!-- <link rel="stylesheet" href="node_modules/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css"> -->
+  <!-- <link rel="stylesheet" href="node_modules/blueimp-gallery/css/blueimp-gallery.min.css"> -->
   <link rel="stylesheet" href="node_modules/ui-select/dist/select.min.css">
   <link rel="stylesheet" href="client/res/css/hotel.css">
 </head>
@@ -115,56 +115,15 @@
 
   <script type="text/ng-template" id="loginModalContainer">
   </script>
+
   <script type="text/ng-template" id="transferModalContainer">
   </script>
+
+  <script type="text/ng-template" id="roomModalContainer">
+  </script>
+
   <!-- 房间状态显示栏目 -->
   <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-  <div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="true">
-    <!-- The container for the modal slides -->
-    <div class="slides"></div>
-    <!-- Controls for the borderless lightbox -->
-    <h3 class="title"></h3>
-    <h3 class="title2"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
-    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-    <div class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" aria-hidden="true">&times;</button>
-            <h2 class="modal-title"></h2>
-            <h2 class="modal-title2"></h2>
-          </div>
-          <!-- <div class="modal-body next"></div> -->
-          <div class="modal-body"></div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success">
-              <i class="glyphicon glyphicon-log-in"></i> 入住
-            </button>
-            <button type="button" class="btn btn-info">
-              <i class="glyphicon glyphicon-retweet"></i> 换房
-            </button>
-            <button type="button" class="btn btn-danger">
-              <i class="glyphicon glyphicon-share"></i> 结算
-            </button>
-            <!--
-            <button type="button" class="btn btn-default pull-left prev">
-              <i class="glyphicon glyphicon-chevron-left"></i> Previous
-            </button>
-            <button type="button" class="btn btn-primary next">
-              Next
-              <i class="glyphicon glyphicon-chevron-right"></i>
-            </button>
-          -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <!--Load script into the app -->
   <script src="node_modules/head/js/head.load.min.js"></script>
   <script src="client/res/js/boot.js"></script>
