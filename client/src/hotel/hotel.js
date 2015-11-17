@@ -45,6 +45,12 @@
           controllerAs: 'checkout',
           activeTab: 'checkout'
       })
+      .when('/checkin', {
+          templateUrl: 'client/src/hotel/room/tmpl/checkinroom.html',
+          controller: 'CheckinCtrl',
+          controllerAs: 'checkin',
+          activeTab: 'checkin'
+      })
       .when('/addRoom', {
           templateUrl: 'client/src/hotel/room/tmpl/addroom.html',
           controller: 'AddRoomCtrl',

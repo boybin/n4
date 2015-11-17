@@ -41,19 +41,23 @@
                 <li><a href="#/roommanage">设置房间</a></li>
               </ul>
             </li>
+            <li ng-class="{active:$route.current.activeTab == 'checkin'}">
+              <a href="#/checkin">
+                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> 入住</a>
+            </li>
             <li ng-class="{active:$route.current.activeTab == 'exchangeroom'}">
               <a href="#/exchangeroom">
                 <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> 更换房间</a>
             </li>
             <li ng-class="{active:$route.current.activeTab == 'checkout'}">
               <a href="#/checkout">
-                <span class="glyphicon glyphicon-share" aria-hidden="true"></span> 结算退房</a>
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> 结算退房</a>
             </li>
 
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="active">
-              <a href="#/login">
+              <a href="">
                 <span ng-bind="globals.currentUser.username"></span>
                 <span class="sr-only"></span>
               </a>
