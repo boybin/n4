@@ -1,6 +1,8 @@
 angular.module('Hotel.Common')
     .controller('MainCtrl',
       function ($scope, $rootScope, $route, store, RoomModel) {
+        //Tab hightlight
+        $scope.$route = $route;
         var main = this;
         main.AllRoomsStatus = RoomModel.AllRoomsStatus();
 
