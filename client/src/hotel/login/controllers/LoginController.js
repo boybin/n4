@@ -7,7 +7,7 @@ angular.module('Hotel.Login')
         var modalInstance = $uibModal.open({
           templateUrl: "client/src/hotel/login/tmpl/login.html",
           backdrop: "static",
-          keyboard: true,
+          keyboard: false,
           animation: true,
           controller: "LoginModalCtrl",
           controllerAs: "loginModal",

@@ -1,3 +1,31 @@
 <div>
-  add room
+    <p>
+      <ui-select ng-model="addroom.selectedFloor">
+        <ui-select-match placeHolder="所有楼层">
+          <span ng-bind="$select.selected.name"></span>
+        </ui-select-match>
+        <ui-select-choices repeat="floor in (addroom.floors | filter: $select.search) track by floor.value">
+          <span ng-bind="floor.name"></span>
+        </ui-select-choices>
+      </ui-select>
+    </p>
+    <p>
+      <ui-select ng-model="addRoom.selectedRoomType">
+        <ui-select-match placeHolder="所有类型房间">
+          <span ng-bind="$select.selected.name"></span>
+        </ui-select-match>
+        <ui-select-choices repeat="roomtype in (addroom.room_types | filter: $select.search) track by roomtype.value">
+          <span ng-bind="roomtype.name"></span>
+        </ui-select-choices>
+      </ui-select>
+    </p>
+    <p>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">#</span>
+        <input type="text" class="form-control" placeholder="房间号" aria-describedby="basic-addon1">
+      </div>
+    </p>
+    <p>
+        <button class="btn btn-primary btn-block" type="button">添加</button>
+      </p>
 </div>

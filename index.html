@@ -45,8 +45,8 @@
               <a href="#/exchangeroom">
                 <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> 更换房间</a>
             </li>
-            <li>
-              <a href="#">
+            <li ng-class="{active:$route.current.activeTab == 'checkout'}">
+              <a href="#/checkout">
                 <span class="glyphicon glyphicon-share" aria-hidden="true"></span> 结算退房</a>
             </li>
 

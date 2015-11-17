@@ -3,11 +3,11 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-lg-3">
-        <ui-select ng-model="exchangeroom.selectedFloor">
+        <ui-select ng-model="checkout.selectedFloor">
           <ui-select-match placeHolder="所有楼层">
             <span ng-bind="$select.selected.name"></span>
           </ui-select-match>
-          <ui-select-choices repeat="floor in (exchangeroom.floors | filter: $select.search) track by floor.value">
+          <ui-select-choices repeat="floor in (checkout.floors | filter: $select.search) track by floor.value">
             <span ng-bind="floor.name"></span>
           </ui-select-choices>
         </ui-select>
@@ -25,7 +25,7 @@
 </div>
 <div id="links">
   <div class="row">
-    <div class="col-md-2" ng-repeat="room in exchangeroom.AllRooms|fuzzyBy:'number':roomNumber|filterBy:['status']:2|filterBy:['floor']:exchangeroom.selectedFloor.value">
+    <div class="col-md-2" ng-repeat="room in checkout.AllRooms|fuzzyBy:'number':roomNumber|filterBy:['status']:2|filterBy:['floor']:checkout.selectedFloor.value">
       <a href="{{room.l_img}}" title="{{room.title}}" data-title2="trdsdsd" data-gallery>
         <img src="{{room.s_img}}" alt="{{room.title}}" title="{{room.title}}" />
       </a>

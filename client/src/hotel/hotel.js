@@ -34,11 +34,17 @@
         activeTab: 'roommanage'
       })
       .when('/exchangeroom', {
-          templateUrl: 'client/src/hotel/room/tmpl/roommanage.html',
+          templateUrl: 'client/src/hotel/room/tmpl/exchangeroom.html',
           controller: 'ExchangeCtrl',
           controllerAs: 'exchangeroom',
           activeTab: 'exchangeroom'
         })
+      .when('/checkout', {
+          templateUrl: 'client/src/hotel/room/tmpl/checkoutroom.html',
+          controller: 'CheckoutCtrl',
+          controllerAs: 'checkout',
+          activeTab: 'checkout'
+      })
       .when('/addRoom', {
           templateUrl: 'client/src/hotel/room/tmpl/addroom.html',
           controller: 'AddRoomCtrl',

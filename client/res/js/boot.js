@@ -27,6 +27,7 @@ head.load(
   {file:'client/src/hotel/room/controllers/AddRoomController.js'},
   {file:'client/src/hotel/room/controllers/ExchangeRoomController.js'},
   {file:'client/src/hotel/room/controllers/RoomManageController.js'},
+  {file:'client/src/hotel/room/controllers/CheckOutRoomController.js'},
 
   {file:'client/src/hotel/hotel.js'}
 );
