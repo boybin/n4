@@ -1,9 +1,8 @@
 angular.module('Hotel.Room')
     .controller('AddRoomCtrl',
-      function (RoomModel, FLOORS, ROOM_TYPES, ROOM_PRICES) {
+      function (RoomService) {
         var addroom = this;
-        addroom.floors = FLOORS;
-        addroom.room_types = ROOM_TYPES;
-        addroom.room_prices = ROOM_PRICES;
-
+        addroom.floors = RoomService.getAllFloorTypes();
+        addroom.room_types = RoomService.getAllRoomTypes();
+        addroom.room_prices = RoomService.getAllRoomPrices();
     });

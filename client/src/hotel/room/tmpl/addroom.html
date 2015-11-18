@@ -14,7 +14,7 @@
 
   <div class="row">
     <div class="col-lg-3">
-      <ui-select ng-model="addRoom.selectedRoomType">
+      <ui-select ng-model="addroom.selectedRoomType">
         <ui-select-match placeHolder="所有类型房间">
           <span ng-bind="$select.selected.name"></span>
         </ui-select-match>
@@ -26,12 +26,12 @@
   </div>
   <div class="row">
     <div class="col-lg-3">
-      <ui-select ng-model="roomboard.selectedRoomType">
-        <ui-select-match placeHolder="所有类型房间">
+      <ui-select ng-model="addroom.selectedRoomPrice">
+        <ui-select-match placeHolder="Room price">
           <span ng-bind="$select.selected.name"></span>
         </ui-select-match>
-        <ui-select-choices repeat="roomtype in (roomboard.room_types | filter: $select.search) track by roomtype.value">
-          <span ng-bind="roomtype.name"></span>
+        <ui-select-choices repeat="roomprice in (addroom.room_prices | filter: $select.search) track by roomprice.value">
+          <span ng-bind="roomprice.name"></span>
         </ui-select-choices>
       </ui-select>
     </div>

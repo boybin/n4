@@ -1,11 +1,11 @@
 angular.module('Hotel.Room')
     .controller('CheckinCtrl',
-    function (RoomModel, FLOORS, ROOM_TYPES) {
+    function (RoomModel, RoomService) {
         var checkin = this;
         //总共的层数设置
-        checkin.floors = FLOORS;
+        checkin.floors = RoomService.getAllFloorTypes();
         //总共的房子类型
-        checkin.room_types = ROOM_TYPES;
+        checkin.room_types = RoomService.getAllRoomTypes();
         //当前的房间板块显示的数据
         checkin.AllRooms = RoomModel.AllRooms();
 

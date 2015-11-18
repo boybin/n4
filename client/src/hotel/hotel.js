@@ -34,12 +34,13 @@
         controllerAs: 'roommanage',
         activeTab: 'roommanage'
       })
+      /*
       .when('/exchangeroom', {
           templateUrl: 'client/src/hotel/room/tmpl/exchangeroom.html',
           controller: 'ExchangeCtrl',
           controllerAs: 'exchangeroom',
           activeTab: 'exchangeroom'
-        })
+        })*/
       .when('/checkout', {
           templateUrl: 'client/src/hotel/room/tmpl/checkoutroom.html',
           controller: 'CheckoutCtrl',
@@ -147,4 +148,5 @@
     id: '3',
     value: '150'
   }]);
+
 })();
