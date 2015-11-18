@@ -10,7 +10,8 @@
     'angular.filter',
     'ui.select',
     'ngSanitize',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'AngularPrint'
   ]);
 
   hotelModule.config(function($routeProvider) {
@@ -131,5 +132,19 @@
   }, {
     name: '待维修',
     value: '4'
+  }]);
+
+  hotelModule.value('ROOM_PRICES', [{
+    name: 'Big room',
+    id: '1',
+    value: '100'
+  }, {
+    name: 'Small room',
+    id: '2',
+    value: '50'
+  }, {
+    name: '3 level Room',
+    id: '3',
+    value: '150'
   }]);
 })();
